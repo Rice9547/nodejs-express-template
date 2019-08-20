@@ -18,8 +18,7 @@ let list = async (req, res, next) => {
 
 let register = async (req, res, next) => {
     try {
-        console.log(req.body, req.query)
-        await models.user.build({
+        await models.users.build({
             email: req.body.email,
             password: req.body.password
         }).save();
@@ -30,6 +29,7 @@ let register = async (req, res, next) => {
             }
         });
     } catch (err) {
+        console.log(err)
         res.status(500).json({
             status: false,
             data: {
@@ -41,7 +41,7 @@ let register = async (req, res, next) => {
 
 let login = async (req, res, next) => {
     try {
-        let user = await models.users.find({
+        let user = await models.users.findOne({
             where: {
                 email: req.body.email,
                 password: req.body.password
