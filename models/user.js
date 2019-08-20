@@ -9,13 +9,16 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		email: {
 			type: DataTypes.STRING(256),
-			allowNull: false
+			allowNull: false,
+			unique: true
 		},
 		password: {
 			type: DataTypes.STRING(256),
 			allowNull: false
 		}
-	}, {});
+	}, {
+		timestamps: false
+	});
 	User.associate = function (models) {
 		// associations can be defined here
 	};
