@@ -74,5 +74,5 @@ Find more info in [sequelize ducument](https://sequelize.org/master/)
 
 ## License
 
-The project is licensed under the BSD license.
+The project is licensed under the MIT license.
 
